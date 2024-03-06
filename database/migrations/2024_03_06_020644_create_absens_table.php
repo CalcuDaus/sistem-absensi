@@ -15,7 +15,7 @@ class CreateAbsensTable extends Migration
     {
         Schema::create('absen', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_siswa')->constrained('siswa');
+            $table->foreignId('siswa_id')->constrained('siswa');
             $table->enum('keterangan', ['h', 'a', 'i', 's']);
             $table->string('sub_keterangan');
             $table->timestamps();

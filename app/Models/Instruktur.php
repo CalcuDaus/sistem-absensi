@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Instruktur extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'id',
+        'email',
+        'nama',
+        'lab'
+    ];
 }

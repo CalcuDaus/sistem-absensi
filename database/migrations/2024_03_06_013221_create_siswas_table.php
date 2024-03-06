@@ -18,10 +18,10 @@ class CreateSiswasTable extends Migration
             $table->string('nis')->unique();
             $table->string('nama');
             $table->enum('gelombang', ['1', '2']);
-            $table->foreignId('id_instruktur')->constrained('instruktur');
-            $table->foreignId('id_sekolah')->constrained('sekolah');
-            $table->foreignId('id_jurusan')->constrained('jurusan');
-            $table->foreignId('id_periode')->constrained('periode');
+            $table->foreignId('instruktur_id')->constrained('instruktur');
+            $table->foreignId('sekolah_id')->constrained('sekolah');
+            $table->foreignId('jurusan_id')->constrained('jurusan');
+            $table->foreignId('periode_id')->constrained('periode');
             $table->timestamps();
         });
     }
