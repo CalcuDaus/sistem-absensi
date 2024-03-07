@@ -5,7 +5,7 @@
    <section class="container title-container">
        <article class="row">
            <div class="col">
-               <h2>Dashboard</h2>
+               <h2>{{$title}}</h2>
            </div>
        </article>
    </section>

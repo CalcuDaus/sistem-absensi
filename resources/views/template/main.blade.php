@@ -4,28 +4,28 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dasify</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/dasify.css" />
-    <link rel="shortcut icon" href="assets/img/tes.png" type="image/png" />
+    <title>{{$title}}</title>
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/dasify.css')}}" />
+    <link rel="shortcut icon" href="{{asset('assets/img/tes.png')}}" type="image/png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <aside id="sidebar">
         <div class="logo text-center mt-3">
-            <img src="assets/img/logo-lkp.png" alt="" width="100px" />
+            <img src="{{asset('assets/img/logo-lkp.png')}}" alt="" width="100px" />
         </div>
         <nav class="mt-5">
             <ul class="menu-sidebar">
                 <!-- S: Dashboard -->
-                <li class="nav-btn nav-btn-active">
-                    <img src="assets/img/icons-home.png" width="22px" alt="" />
-                    <a href="index.html">Dashboard</a>
+                <li class="nav-btn {{$title ==='Dashboard' ? 'nav-btn-active' : ''}}">
+                    <img src="{{asset('assets/img/icons-home.png')}}" width="22px" alt="" />
+                    <a href="/admin">Dashboard</a>
                 </li>
                 <!-- E: Dashboard -->
                 <!-- S: Table -->
-                <li class="nav-btn drop-nav c-pointer d-flex flex-column justify-content-start align-items-start">
+                <li class="nav-btn drop-nav c-pointer {{$title ==='Master Data' ? 'nav-btn-active' : ''}} d-flex flex-column justify-content-start align-items-start">
                     <div class="">
                         <i class="fa-solid fa-table fa-lg"></i>
                         <a href="#" class="btn-dropdown">Data </a>
@@ -42,19 +42,25 @@
                             <li class="mt-2">
                                 <a href="data-table.html" class="d-flex align-items-center">
                                     <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Data Sekolah</span>
+                                    <span>Sekolah</span>
                                 </a>
                             </li>
                             <li class="mt-2">
                                 <a href="data-table.html" class="d-flex align-items-center">
                                     <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Data Jurusan</span>
+                                    <span>Jurusan</span>
                                 </a>
                             </li>
                             <li class="mt-2">
                                 <a href="data-table.html" class="d-flex align-items-center">
                                     <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Data Periode</span>
+                                    <span>Periode</span>
+                                </a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="/admin/instruktur" class="d-flex align-items-center">
+                                    <i class="fa-solid fa-crosshairs pe-2"></i>
+                                    <span>Instruktur</span>
                                 </a>
                             </li>
                         </ul>
@@ -63,7 +69,7 @@
                 <!-- E: Table -->
                 <!-- S: Setting -->
                 <li class="nav-btn setting">
-                    <img src="assets/img/icons-setting.png" width="22px" alt="" />
+                    <img src="{{asset('assets/img/icons-setting.png')}}" width="22px" alt="" />
                     <a href="javascript:void(0);">Setting</a>
                 </li>
                 <!-- E: Setting -->
@@ -76,16 +82,16 @@
     <main id="main">
         <header class="d-flex w-100 justify-content-between align-items-center">
             <div class="img-left d-flex justify-content-center align-items-center">
-                <img src="assets/img/hamburger-icon.jpg" alt="" class="hamburger-icon icon-img" />
+                <img src="{{asset('assets/img/hamburger-icon.jpg')}}" alt="" class="hamburger-icon icon-img" />
                 <h4 class="ms-4 mt-2 company-name">LKP Utama Jaya</h4>
             </div>
             <div class="container-header d-flex">
                 <div class="search">
-                    <img src="assets/img/icons-search.png" class="ms-4 search-img icon-img" alt="" />
+                    <img src="{{asset('assets/img/icons-search.png')}}" class="ms-4 search-img icon-img" alt="" />
                     <input type="text" autofocus placeholder="search.." class="search-field" />
                 </div>
                 <div class="notif">
-                    <img src="assets/img/icons-notification.png" class="ms-4 icon-img" alt="" />
+                    <img src="{{asset('assets/img/icons-notification.png')}}" class="ms-4 icon-img" alt="" />
                     <div class="notif-count">2</div>
                     <div class="container-notif">
                         <div class="container">
@@ -158,7 +164,7 @@
                     </button>
                 </div>
                 <div class="profile">
-                    <img src="assets/img/daus.png" alt="" class="ms-4 profile-img" />
+                    <img src="{{asset('assets/img/daus.png')}}" alt="" class="ms-4 profile-img" />
                     <div class="container-profile">
                         <div class="container">
                             <div class="row pt-2 pb-2 li-notif">
@@ -191,10 +197,10 @@
         <span class="loader"></span>
         <span class="text-loader">Sabar Ngab...</span>
     </div>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="assets/js/main-chart.js"></script>
+    <script src="{{asset('assets/js/main-chart.js')}}"></script>
 </body>
 
 </html>
