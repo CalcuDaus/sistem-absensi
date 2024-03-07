@@ -34,25 +34,25 @@
                     <div class="dropdown-sidebar mt-2 ms-1 d-flex flex-column">
                         <ul>
                             <li class="mt-2">
-                                <a href="tables.html" class="d-flex align-items-center">
+                                <a href="/admin/siswa" class="d-flex align-items-center">
                                     <i class="fa-solid fa-crosshairs pe-2"></i>
                                     <span>Data Siswa</span>
                                 </a>
                             </li>
                             <li class="mt-2">
-                                <a href="data-table.html" class="d-flex align-items-center">
+                                <a href="/admin/sekolah" class="d-flex align-items-center">
                                     <i class="fa-solid fa-crosshairs pe-2"></i>
                                     <span>Sekolah</span>
                                 </a>
                             </li>
                             <li class="mt-2">
-                                <a href="data-table.html" class="d-flex align-items-center">
+                                <a href="/admin/jurusan" class="d-flex align-items-center">
                                     <i class="fa-solid fa-crosshairs pe-2"></i>
                                     <span>Jurusan</span>
                                 </a>
                             </li>
                             <li class="mt-2">
-                                <a href="data-table.html" class="d-flex align-items-center">
+                                <a href="/admin/periode" class="d-flex align-items-center">
                                     <i class="fa-solid fa-crosshairs pe-2"></i>
                                     <span>Periode</span>
                                 </a>
