@@ -569,6 +569,10 @@ canvas {
   color: var(--background);
 }
 
+.logo{
+  
+}
+
 .light-img {
   filter: brightness(20%);
 }

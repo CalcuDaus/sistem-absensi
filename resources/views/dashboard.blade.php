@@ -16,28 +16,28 @@
        <article class="row d-flex justify-content-center align-items-center flex-wrap">
            <div class="col-md-6 d-flex justify-content-center align-items-center col-xl-3 mt-3">
                <div class="d-card shadow-card d-flex justify-content-center align-items-center flex-column">
-                   <h4>Order</h4>
+                   <h4>Instruktur</h4>
                    <h1>25</h1>
                    <i class="fa-solid fa-layer-group icon-card"></i>
                </div>
            </div>
            <div class="col-md-6 d-flex justify-content-center align-items-center col-xl-3 mt-3">
                <div class="d-card shadow-card d-flex justify-content-center align-items-center flex-column">
-                   <h4>User</h4>
+                   <h4>Siswa</h4>
                    <h1>3</h1>
                    <i class="fa-solid fa-user icon-card"></i>
                </div>
            </div>
            <div class="col-md-6 d-flex justify-content-center align-items-center col-xl-3 mt-3">
                <div class="d-card shadow-card d-flex justify-content-center align-items-center flex-column">
-                   <h4>Company</h4>
+                   <h4>Jurusan</h4>
                    <h1>11</h1>
                    <i class="fa-solid fa-city icon-card"></i>
                </div>
            </div>
            <div class="col-md-6 d-flex justify-content-center align-items-center col-xl-3 mt-3">
                <div class="d-card shadow-card d-flex justify-content-center align-items-center flex-column">
-                   <h4>Product</h4>
+                   <h4>Sekolah</h4>
                    <h1>125</h1>
                    <i class="fa-solid fa-box icon-card"></i>
                </div>

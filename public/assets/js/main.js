@@ -158,8 +158,3 @@ window.addEventListener("load", function () {
 });
 
 
-document.querySelector('.company-name').addEventListener('click',function(){
-  const successCallback = (position) => console.log(position);
-  const errorCallback = (err) => console.error(err);
-  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-})

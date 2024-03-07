@@ -13,9 +13,8 @@
 
 <body>
     <aside id="sidebar">
-        <div class="logo d-flex align-items-end">
-            <img src="assets/img/dasify-logo.png" alt="" width="100px" />
-            <p class="text-light fw-bold t-logo">asify</p>
+        <div class="logo text-center mt-3">
+            <img src="assets/img/logo-lkp.png" alt="" width="100px" />
         </div>
         <nav class="mt-5">
             <ul class="menu-sidebar">
@@ -25,67 +24,11 @@
                     <a href="index.html">Dashboard</a>
                 </li>
                 <!-- E: Dashboard -->
-                <!-- S: Report -->
-                <li class="nav-btn drop-nav c-pointer d-flex flex-column justify-content-start align-items-start">
-                    <div class="">
-                        <img src="assets/img/icons-report.png" width="22px" alt="" />
-                        <a href="#" class="btn-dropdown">Report </a>
-                    </div>
-                    <i class="fa-solid fa-less-than less-than"></i>
-                    <div class="dropdown-sidebar mt-2 ms-1 d-flex flex-column">
-                        <ul>
-                            <li class="mt-2">
-                                <a href="javascript:void(0);" class="d-flex align-items-center">
-                                    <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Overall</span>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="javascript:void(0);" class="d-flex align-items-center">
-                                    <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Sale Report</span>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="javascript:void(0);" class="d-flex align-items-center">
-                                    <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Report</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <!-- E: Report -->
-                <!-- S: Layout -->
-                <li class="nav-btn drop-nav c-pointer d-flex flex-column justify-content-start align-items-start">
-                    <div class="">
-                        <img src="assets/img/icons-grid.png" width="22px" alt="" />
-                        <a href="#" class="btn-dropdown">Layouts </a>
-                    </div>
-                    <i class="fa-solid fa-less-than less-than"></i>
-                    <div class="dropdown-sidebar mt-2 ms-1 d-flex flex-column">
-                        <ul>
-                            <li class="mt-2">
-                                <a href="form-layout.html" class="d-flex align-items-center">
-                                    <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Form Layout</span>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="javascript:void(0);" class="d-flex align-items-center">
-                                    <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Grid Layout</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <!-- E: Layout -->
                 <!-- S: Table -->
                 <li class="nav-btn drop-nav c-pointer d-flex flex-column justify-content-start align-items-start">
                     <div class="">
                         <i class="fa-solid fa-table fa-lg"></i>
-                        <a href="#" class="btn-dropdown">Tables </a>
+                        <a href="#" class="btn-dropdown">Data </a>
                     </div>
                     <i class="fa-solid fa-less-than less-than"></i>
                     <div class="dropdown-sidebar mt-2 ms-1 d-flex flex-column">
@@ -93,13 +36,25 @@
                             <li class="mt-2">
                                 <a href="tables.html" class="d-flex align-items-center">
                                     <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Tables</span>
+                                    <span>Data Siswa</span>
                                 </a>
                             </li>
                             <li class="mt-2">
                                 <a href="data-table.html" class="d-flex align-items-center">
                                     <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Data Tables</span>
+                                    <span>Data Sekolah</span>
+                                </a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="data-table.html" class="d-flex align-items-center">
+                                    <i class="fa-solid fa-crosshairs pe-2"></i>
+                                    <span>Data Jurusan</span>
+                                </a>
+                            </li>
+                            <li class="mt-2">
+                                <a href="data-table.html" class="d-flex align-items-center">
+                                    <i class="fa-solid fa-crosshairs pe-2"></i>
+                                    <span>Data Periode</span>
                                 </a>
                             </li>
                         </ul>
@@ -122,7 +77,7 @@
         <header class="d-flex w-100 justify-content-between align-items-center">
             <div class="img-left d-flex justify-content-center align-items-center">
                 <img src="assets/img/hamburger-icon.jpg" alt="" class="hamburger-icon icon-img" />
-                <h4 class="ms-4 mt-2 company-name">Company Name</h4>
+                <h4 class="ms-4 mt-2 company-name">LKP Utama Jaya</h4>
             </div>
             <div class="container-header d-flex">
                 <div class="search">
