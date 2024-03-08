@@ -35,7 +35,11 @@ class SekolahController extends Controller
             'required' => 'Nama :attribute Harus Diisi !',
             'min' => 'Nama :attribute Minimal 10 Huruf !',
         ]);
-
+        if ($validator->fails()) {
+            return redirect()->route('tambah.sekolah')
+                ->withErrors($validator)
+                ->withInput();
+        }
         $query = Sekolah::create([
             'sekolah' => $request->input('sekolah')
         ]);
@@ -63,6 +67,11 @@ class SekolahController extends Controller
             'required' => 'Nama :attribute Harus Diisi !',
             'min' => 'Nama :attribute Minimal 10 Huruf !',
         ]);
+        if ($validator->fails()) {
+            return redirect()->route('url.edit.sekolah', $id)
+                ->withErrors($validator)
+                ->withInput();
+        }
 
         $sekolah = Sekolah::findOrFail($id);
 

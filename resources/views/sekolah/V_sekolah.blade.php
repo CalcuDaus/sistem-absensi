@@ -32,14 +32,13 @@
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $s['sekolah'] }}</td>
                                         <td>
-                                            <form id="deleteForm" action="{{ route('hapus.sekolah', $s['id']) }}"
-                                                method="POST">
+                                            <form id="deleteForm" onsubmit="return confirm('Apakah Anda Yakin ?');"
+                                                action="{{ route('hapus.sekolah', $s['id']) }}" method="POST">
                                                 @csrf
                                                 @method('delete')
                                                 <a href="{{ route('url.edit.sekolah', $s['id']) }}" title="Edit"
                                                     class="btn btn-info"><i class="fa-solid fa-pen text-white"></i></a>
-                                                <button type="button" onclick="showConfirmation()" title="Hapus"
-                                                    class="btn btn-danger"><i
+                                                <button type="submit"title="Hapus" class="btn btn-danger"><i
                                                         class="fa-solid fa-eraser text-white"></i></button>
                                             </form>
                                         </td>

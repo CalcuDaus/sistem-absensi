@@ -36,6 +36,11 @@ class PeriodeController extends Controller
             'required' => 'Nama :attribute Harus Diisi !',
             'min' => 'Nama :attribute Minimal 10 Huruf !',
         ]);
+        if ($validator->fails()) {
+            return redirect()->route('tambah.periode')
+                ->withErrors($validator)
+                ->withInput();
+        }
 
         $query = Periode::create([
             'periode' => $request->input('periode')
@@ -64,7 +69,11 @@ class PeriodeController extends Controller
             'required' => 'Nama :attribute Harus Diisi !',
             'min' => 'Nama :attribute Minimal 10 Huruf !',
         ]);
-
+        if ($validator->fails()) {
+            return redirect()->route('url.edit.periode', $id)
+                ->withErrors($validator)
+                ->withInput();
+        }
         $periode = Periode::findOrFail($id);
 
         $query = $periode->update([

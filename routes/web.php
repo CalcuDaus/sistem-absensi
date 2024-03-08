@@ -6,10 +6,7 @@ use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\PeriodeController;
 use App\Http\Controllers\SekolahController;
-use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SiswaController;
-use App\Models\Instruktur;
-use App\Models\Sekolah;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,9 +26,6 @@ Route::get('/', function () {
 
 Route::prefix('/admin')->group(function () {
     Route::get('/', [AdminController::class, 'index']);
-    Route::get('/instruktur', [InstrukturController::class, 'index']);
-    Route::get('/periode', [PeriodeController::class, 'index']);
-    Route::get('/jurusan', [JurusanController::class, 'index']);
     Route::get('/pengaturan', [PengaturanController::class, 'index']);
     Route::prefix('/sekolah')->group(function () {
         Route::get('/', [SekolahController::class, 'index'])->name('sekolah');
@@ -48,6 +42,22 @@ Route::prefix('/admin')->group(function () {
         Route::post('/tambah', [PeriodeController::class, 'store'])->name('tambah.periode');
         Route::put('/edit/{id}', [PeriodeController::class, 'update'])->name('edit.periode');
         Route::delete('/hapus/{id}', [PeriodeController::class, 'destroy'])->name('hapus.periode');
+    });
+    Route::prefix('/jurusan')->group(function () {
+        Route::get('/', [JurusanController::class, 'index'])->name('jurusan');
+        Route::get('/tambah', [JurusanController::class, 'create']);
+        Route::get('/edit/{id}', [JurusanController::class, 'edit'])->name('url.edit.jurusan');
+        Route::post('/tambah', [JurusanController::class, 'store'])->name('tambah.jurusan');
+        Route::put('/edit/{id}', [JurusanController::class, 'update'])->name('edit.jurusan');
+        Route::delete('/hapus/{id}', [JurusanController::class, 'destroy'])->name('hapus.jurusan');
+    });
+    Route::prefix('/instruktur')->group(function () {
+        Route::get('/', [InstrukturController::class, 'index'])->name('instruktur');
+        Route::get('/tambah', [InstrukturController::class, 'create']);
+        Route::get('/edit/{id}', [InstrukturController::class, 'edit'])->name('url.edit.instruktur');
+        Route::post('/tambah', [InstrukturController::class, 'store'])->name('tambah.instruktur');
+        Route::put('/edit/{id}', [InstrukturController::class, 'update'])->name('edit.instruktur');
+        Route::delete('/hapus/{id}', [InstrukturController::class, 'destroy'])->name('hapus.instruktur');
     });
     Route::prefix('/siswa')->group(function () {
         Route::get('/', [SiswaController::class, 'index']);
