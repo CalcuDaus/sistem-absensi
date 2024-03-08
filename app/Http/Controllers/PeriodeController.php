@@ -13,6 +13,6 @@ class PeriodeController extends Controller
             'title' => 'Master Data'
         ];
 
-        return view('V_periode', $data);
+        return view('periode.V_periode', $data);
     }
 }

@@ -212,7 +212,6 @@
     <script>
       new DataTable("#example");
     </script>
-    
 </body>
 
 </html>

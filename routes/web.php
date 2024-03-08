@@ -29,9 +29,18 @@ Route::get('/', function () {
 Route::prefix('/admin')->group(function () {
     Route::get('/', [AdminController::class, 'index']);
     Route::get('/instruktur', [InstrukturController::class, 'index']);
-    Route::get('/siswa', [SiswaController::class, 'index']);
     Route::get('/periode', [PeriodeController::class, 'index']);
     Route::get('/jurusan', [JurusanController::class, 'index']);
-    Route::get('/sekolah', [SekolahController::class, 'index']);
     Route::get('/pengaturan', [PengaturanController::class, 'index']);
+    Route::prefix('/sekolah')->group(function () {
+        Route::get('/', [SekolahController::class, 'index'])->name('sekolah');
+        Route::get('/tambah', [SekolahController::class, 'create']);
+        Route::get('/edit/{id}', [SekolahController::class, 'edit'])->name('url.edit.sekolah');
+        Route::post('/tambah', [SekolahController::class, 'store'])->name('tambah.sekolah');
+        Route::put('/edit/{id}', [SekolahController::class, 'update'])->name('edit.sekolah');
+    });
+    Route::prefix('/siswa')->group(function () {
+        Route::get('/', [SiswaController::class, 'index']);
+        Route::get('/tambah', [SiswaController::class, 'create']);
+    });
 });

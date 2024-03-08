@@ -13,6 +13,6 @@ class JurusanController extends Controller
             'title' => 'Master Data'
         ];
 
-        return view('V_jurusan', $data);
+        return view('jurusan.V_jurusan', $data);
     }
 }

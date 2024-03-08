@@ -13,6 +13,6 @@ class InstrukturController extends Controller
             'title' => 'Master Data'
         ];
 
-        return view('V_instruktur', $data);
+        return view('instruktur.V_instruktur', $data);
     }
 }

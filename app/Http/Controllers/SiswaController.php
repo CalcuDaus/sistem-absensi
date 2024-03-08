@@ -13,6 +13,6 @@ class SiswaController extends Controller
             'title' => 'Master Data'
         ];
 
-        return view('V_siswa', $data);
+        return view('siswa.V_siswa', $data);
     }
 }

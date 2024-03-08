@@ -161,3 +161,6 @@ window.addEventListener("load", function () {
 });
 
 
+function hideElement(element) {
+  element.style.display = "none";
+}
