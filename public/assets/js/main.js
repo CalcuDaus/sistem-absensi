@@ -164,3 +164,17 @@ window.addEventListener("load", function () {
 function hideElement(element) {
   element.style.display = "none";
 }
+
+function showConfirmation() {
+  Swal.fire({
+      title: 'Confirm',
+      text: 'Apakah Kamu Yakin ?',
+      icon: 'question',
+      showConfirmButton: true,
+      showCancelButton: true
+  }).then((result) => {
+      if (result.isConfirmed) {
+          document.getElementById('deleteForm').submit();
+      }
+  });
+}

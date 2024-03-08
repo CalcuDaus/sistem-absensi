@@ -75,4 +75,15 @@ class SekolahController extends Controller
         }
         return redirect()->route('url.edit.sekolah')->withErrors($validator);
     }
+    public function destroy($id)
+    {
+        $dt_sekolah = Sekolah::findOrFail($id);
+
+        $query = $dt_sekolah->delete();
+
+        if ($query) {
+            return redirect()->route('sekolah')->with(['success' => 'Data Berhasil Di Hapus !']);
+        }
+        return redirect()->route('sekolah')->withErrors(['error' => 'Data Gagal Di Hapus !']);
+    }
 }
