@@ -7,8 +7,13 @@
     <title>{{$title}}</title>
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/dasify.css')}}" />
-    <link rel="shortcut icon" href="{{asset('assets/img/tes.png')}}" type="image/png" />
+    <link rel="shortcut icon" href="{{asset('assets/img/logo-lkp.png')}}" type="image/png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Data Table -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css"
+    />
 </head>
 
 <body>
@@ -68,9 +73,9 @@
                 </li>
                 <!-- E: Table -->
                 <!-- S: Setting -->
-                <li class="nav-btn setting">
+                <li class="nav-btn setting {{$title ==='Pengaturan' ? 'nav-btn-active' : ''}}">
                     <img src="{{asset('assets/img/icons-setting.png')}}" width="22px" alt="" />
-                    <a href="javascript:void(0);">Setting</a>
+                    <a href="/admin/pengaturan">Pengaturan</a>
                 </li>
                 <!-- E: Setting -->
                 <li class="nav-btn c-pointer btn-shorten">
@@ -195,12 +200,19 @@
     </main>
     <div class="wrapper-loader">
         <span class="loader"></span>
-        <span class="text-loader">Sabar Ngab...</span>
+        <span class="text-loader">Loading...</span>
     </div>
+    
     <script src="{{asset('assets/js/main.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{asset('assets/js/main-chart.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script>
+      new DataTable("#example");
+    </script>
+    
 </body>
 
 </html>

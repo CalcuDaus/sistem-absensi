@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJurusansTable extends Migration
+class CreateAbsensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateJurusansTable extends Migration
      */
     public function up()
     {
-        Schema::create('jurusan', function (Blueprint $table) {
+        Schema::create('absens', function (Blueprint $table) {
             $table->id();
-            $table->string('jurusan');
+            $table->foreignId('siswa_id')->constrained('siswas');
+            $table->enum('keterangan', ['h', 'a', 'i', 's']);
+            $table->string('sub_keterangan');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateJurusansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jurusan');
+        Schema::dropIfExists('absens');
     }
 }

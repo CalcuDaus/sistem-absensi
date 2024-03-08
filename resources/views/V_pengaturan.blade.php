@@ -12,7 +12,6 @@
    <!-- end section title -->
    <!-- section main content -->
    <section class="container container-content">
-    <h2>Siswa</h2>
    </section>
    <!-- end section main content -->
     @endsection

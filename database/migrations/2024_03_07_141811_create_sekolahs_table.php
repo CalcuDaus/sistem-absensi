@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInstruktursTable extends Migration
+class CreateSekolahsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateInstruktursTable extends Migration
      */
     public function up()
     {
-        Schema::create('instruktur', function (Blueprint $table) {
+        Schema::create('sekolahs', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
-            $table->string('nama');
-            $table->enum('lab', ['1', '2', '3']);
+            $table->string('sekolah');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateInstruktursTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('instruktur');
+        Schema::dropIfExists('sekolahs');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSekolahsTable extends Migration
+class CreatePeriodesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateSekolahsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sekolah', function (Blueprint $table) {
+        Schema::create('periodes', function (Blueprint $table) {
             $table->id();
-            $table->string('sekolah');
+            $table->string('periode');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateSekolahsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sekolah');
+        Schema::dropIfExists('periodes');
     }
 }

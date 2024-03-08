@@ -13,15 +13,15 @@ class CreateSiswasTable extends Migration
      */
     public function up()
     {
-        Schema::create('siswa', function (Blueprint $table) {
+        Schema::create('siswas', function (Blueprint $table) {
             $table->id();
             $table->string('nis')->unique();
             $table->string('nama');
             $table->enum('gelombang', ['1', '2']);
-            $table->foreignId('instruktur_id')->constrained('instruktur');
-            $table->foreignId('sekolah_id')->constrained('sekolah');
-            $table->foreignId('jurusan_id')->constrained('jurusan');
-            $table->foreignId('periode_id')->constrained('periode');
+            $table->foreignId('instruktur_id')->constrained('instrukturs');
+            $table->foreignId('sekolah_id')->constrained('sekolahs');
+            $table->foreignId('jurusan_id')->constrained('jurusans');
+            $table->foreignId('periode_id')->constrained('periodes');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreateSiswasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('siswa');
+        Schema::dropIfExists('siswas');
     }
 }
