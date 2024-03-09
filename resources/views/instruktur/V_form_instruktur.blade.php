@@ -34,15 +34,15 @@
                     <div class="mb-3 mt-6">
                         <label for="exampleFormControlInput1" class="form-label w-100">Email
                             <input type="email" name="email" class="form-control"
-                                value="{{ old('email', $dt_instruktur->email) }}" id="exampleFormControlInput1"
-                                placeholder="..." autocomplete="off" autofocus /></label>
+                                value="{{ $aksi == 'Edit' ? old('email', $dt_instruktur->email) : old('email') }}"
+                                id="exampleFormControlInput1" placeholder="..." autocomplete="off" autofocus /></label>
                         @error('email')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                         <label for="exampleFormControlInput1" class="form-label w-100">Nama
                             <input type="text" name="nama" class="form-control"
-                                value="{{ old('nama', $dt_instruktur->nama) }}" id="exampleFormControlInput1"
-                                placeholder="..." autocomplete="off" autofocus /></label>
+                                value="{{ $aksi == 'Edit' ? old('nama', $dt_instruktur->nama) : old('nama') }}"
+                                id="exampleFormControlInput1" placeholder="..." autocomplete="off" autofocus /></label>
                         @error('nama')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror

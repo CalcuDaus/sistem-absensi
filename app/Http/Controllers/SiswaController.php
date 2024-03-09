@@ -54,7 +54,7 @@ class SiswaController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'nis' => 'required|min:6',
+            'nis' => 'required|min:6|unique:siswas,nis',
             'nama' => 'required',
             'gelombang' => 'required',
             'instruktur' => 'required',
@@ -64,6 +64,7 @@ class SiswaController extends Controller
         ], [
             'required' => 'Nama :attribute Harus Diisi !',
             'min' => 'Nama :attribute Minimal 10 Huruf !',
+            'unique' => ':attribute Telah Terdaftar !'
         ]);
         if ($validator->fails()) {
             return redirect()->route('tambah.siswa')

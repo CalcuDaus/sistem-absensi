@@ -49,11 +49,7 @@ class SiteController extends Controller
     }
     public function lab(Request $request, $nomor)
     {
-        $clientIP = ip2long($request->getClientIp());
-        $startIP = ip2long('192.168.55.1');
-        $endIP = ip2long('192.168.55.255');
-
-        if ($clientIP < $startIP || $clientIP > $endIP) {
+        if ($request->getClientIp() != '192.168.55.1') {
             return redirect()->route('error.lokasi');
         }
 
