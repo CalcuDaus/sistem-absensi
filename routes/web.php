@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\InstrukturController;
 use App\Http\Controllers\JurusanController;
@@ -29,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/admin')->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('dashboard');
         Route::get('/pengaturan', [PengaturanController::class, 'index']);
+        Route::get('/absen', [AbsenController::class, 'index'])->name('absen');
         Route::prefix('/sekolah')->group(function () {
             Route::get('/', [SekolahController::class, 'index'])->name('sekolah');
             Route::get('/tambah', [SekolahController::class, 'create']);

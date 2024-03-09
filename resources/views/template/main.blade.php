@@ -32,49 +32,58 @@
                     <a href="/admin">Dashboard</a>
                 </li>
                 <!-- E: Dashboard -->
-                <!-- S: Table -->
-                <li
-                    class="nav-btn drop-nav c-pointer {{ $title === 'Master Data' ? 'nav-btn-active' : '' }} d-flex flex-column justify-content-start align-items-start">
-                    <div class="">
-                        <i class="fa-solid fa-table fa-lg"></i>
-                        <a href="#" class="btn-dropdown">Data </a>
-                    </div>
-                    <i class="fa-solid fa-less-than less-than"></i>
-                    <div class="dropdown-sidebar mt-2 ms-1 d-flex flex-column">
-                        <ul>
-                            <li class="mt-2">
-                                <a href="/admin/siswa" class="d-flex align-items-center">
-                                    <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Data Siswa</span>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="/admin/sekolah" class="d-flex align-items-center">
-                                    <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Sekolah</span>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="/admin/jurusan" class="d-flex align-items-center">
-                                    <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Jurusan</span>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="/admin/periode" class="d-flex align-items-center">
-                                    <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Periode</span>
-                                </a>
-                            </li>
-                            <li class="mt-2">
-                                <a href="/admin/instruktur" class="d-flex align-items-center">
-                                    <i class="fa-solid fa-crosshairs pe-2"></i>
-                                    <span>Instruktur</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                {{-- CREDENTIALS ADMIN --}}
+                @auth
+                    @if (auth()->user()->level == 'admin')
+                        <li
+                            class="nav-btn drop-nav c-pointer {{ $title === 'Master Data' ? 'nav-btn-active' : '' }} d-flex flex-column justify-content-start align-items-start">
+                            <div class="">
+                                <i class="fa-solid fa-table fa-lg"></i>
+                                <a href="#" class="btn-dropdown">Data </a>
+                            </div>
+                            <i class="fa-solid fa-less-than less-than"></i>
+                            <div class="dropdown-sidebar mt-2 ms-1 d-flex flex-column">
+                                <ul>
+                                    <li class="mt-2">
+                                        <a href="/admin/siswa" class="d-flex align-items-center">
+                                            <i class="fa-solid fa-crosshairs pe-2"></i>
+                                            <span>Data Siswa</span>
+                                        </a>
+                                    </li>
+                                    <li class="mt-2">
+                                        <a href="/admin/sekolah" class="d-flex align-items-center">
+                                            <i class="fa-solid fa-crosshairs pe-2"></i>
+                                            <span>Sekolah</span>
+                                        </a>
+                                    </li>
+                                    <li class="mt-2">
+                                        <a href="/admin/jurusan" class="d-flex align-items-center">
+                                            <i class="fa-solid fa-crosshairs pe-2"></i>
+                                            <span>Jurusan</span>
+                                        </a>
+                                    </li>
+                                    <li class="mt-2">
+                                        <a href="/admin/periode" class="d-flex align-items-center">
+                                            <i class="fa-solid fa-crosshairs pe-2"></i>
+                                            <span>Periode</span>
+                                        </a>
+                                    </li>
+                                    <li class="mt-2">
+                                        <a href="/admin/instruktur" class="d-flex align-items-center">
+                                            <i class="fa-solid fa-crosshairs pe-2"></i>
+                                            <span>Instruktur</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    @elseif(auth()->user()->level == 'instruktur')
+                        <li class="nav-btn {{ $title === 'Absen Siswa' ? 'nav-btn-active' : '' }}">
+                            <img src="{{ asset('assets/img/icons-user.png') }}" width="22px" alt="" />
+                            <a href="{{ route('absen') }}">Absen Siswa</a>
+                        </li>
+                    @endif
+                @endauth
                 <!-- E: Table -->
                 <!-- S: Setting -->
                 <li class="nav-btn setting {{ $title === 'Pengaturan' ? 'nav-btn-active' : '' }}">
@@ -185,7 +194,8 @@
                             </div>
                             <div class="row pt-2 pb-2 li-notif">
                                 <div class="col fs-8">
-                                    <i class="fa-solid fa-right-from-bracket pe-2"></i> logout
+                                    <a href="{{ route('logout') }}" class="text-decoration-none text-white"><i
+                                            class="fa-solid fa-right-from-bracket pe-2"></i> logout</a>
                                 </div>
                             </div>
                         </div>

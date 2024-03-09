@@ -35,11 +35,7 @@ class SiteController extends Controller
         ];
 
         if (Auth::attempt($info_login)) {
-            if (Auth::user()->level === 'admin') {
-                return redirect()->route('dashboard')->with(['success' => 'Login Berhasil']);
-            } elseif (Auth::user()->level === 'instruktur') {
-                return redirect()->route('dashboard.instruktur')->with(['success' => 'Login Berhasil']);
-            }
+            return redirect()->route('dashboard')->with(['success' => 'Login Berhasil']);
         }
         return redirect()->route('home')->with(['error' => 'Username atau Password Anda Salah !']);
     }
