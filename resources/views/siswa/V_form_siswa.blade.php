@@ -25,21 +25,20 @@
                     ?>
                     <div class="bg-primary h2-title-card position-absolute top-0 w-100 start-0 py-3 px-3">
                         <h4>{{ $aksi }} Data siswa</h4>
-
                     </div>
                     <div class="mb-3 mt-6">
                         <label for="exampleFormControlInput1" class="form-label w-100">Nis
                             <input type="number" name="nis" class="form-control"
-                                value="{{ old('nis', $dt_siswa->nis) }}" id="exampleFormControlInput1" placeholder="..."
-                                autocomplete="off" autofocus />
+                                value="{{ $aksi == 'Edit' ? old('nis', $dt_siswa->nis) : old('nis') }}"
+                                id="exampleFormControlInput1" placeholder="..." autocomplete="off" autofocus />
                         </label>
                         @error('nis')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                         <label for="exampleFormControlInput1" class="form-label w-100">Nama
                             <input type="text" name="nama" class="form-control"
-                                value="{{ old('nama', $dt_siswa->nama) }}" id="exampleFormControlInput1" placeholder="..."
-                                autocomplete="off" autofocus />
+                                value="{{ $aksi == 'Edit' ? old('nama', $dt_siswa->nama) : old('nama') }}"
+                                id="exampleFormControlInput1" placeholder="..." autocomplete="off" autofocus />
                         </label>
                         @error('nama')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -59,7 +58,7 @@
                                 <option selected disabled>-- Pilih Instruktur --</option>
                                 @foreach ($dt_instruktur as $item)
                                     <option value="{{ $item->id }}"
-                                        {{ old('instruktur', $dt_siswa->instruktur_id) == $item->id ? 'selected' : '' }}>
+                                        {{ $aksi == 'Edit' ? (old('instruktur', $dt_siswa->instruktur_id) == $item->id ? 'selected' : '') : old('instruktur') }}>
                                         {{ $item->nama }}
                                     </option>
                                 @endforeach
@@ -73,7 +72,7 @@
                                 <option selected disabled>-- Pilih Sekolah --</option>
                                 @foreach ($dt_sekolah as $item)
                                     <option value="{{ $item->id }}"
-                                        {{ old('sekolah', $dt_siswa->sekolah_id) == $item->id ? 'selected' : '' }}>
+                                        {{ $aksi == 'Edit' ? (old('sekolah', $dt_siswa->sekolah_id) == $item->id ? 'selected' : '') : old('sekolah') }}>
                                         {{ $item->sekolah }}
                                     </option>
                                 @endforeach
@@ -87,7 +86,7 @@
                                 <option selected disabled>-- Pilih Jurusan --</option>
                                 @foreach ($dt_jurusan as $item)
                                     <option value="{{ $item->id }}"
-                                        {{ old('jurusan', $dt_siswa->jurusan_id) == $item->id ? 'selected' : '' }}>
+                                        {{ $aksi == 'Edit' ? (old('jurusan', $dt_siswa->jurusan_id) == $item->id ? 'selected' : '') : old('jurusan') }}>
                                         {{ $item->jurusan }}
                                     </option>
                                 @endforeach
@@ -101,7 +100,7 @@
                                 <option selected disabled>-- Pilih Periode --</option>
                                 @foreach ($dt_periode as $item)
                                     <option value="{{ $item->id }}"
-                                        {{ old('periode', $dt_siswa->periode_id) == $item->id ? 'selected' : '' }}>
+                                        {{ $aksi == 'Edit' ? (old('periode', $dt_siswa->periode_id) == $item->id ? 'selected' : '') : old('periode') }}>
                                         {{ $item->periode }}
                                     </option>
                                 @endforeach

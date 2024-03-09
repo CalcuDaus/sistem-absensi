@@ -5,8 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page || Dasify</title>
-    <link rel="stylesheet" href="./assets/css/dasify.css" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ asset('./assets/css/dasify.css') }}" />
+    <link rel="stylesheet" href="{{ asset('./assets/css/bootstrap.min.css') }}" />
+    <link rel="shortcut icon" href="{{ asset('./assets/img/logo-lkp.png') }}" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -16,26 +20,47 @@
 
         <div class="d-flex flex-row">
             <div class="img-panel w-50 d-flex justify-content-center align-items-center">
-                <img src="./assets/img/logo-lkp.png" alt="" width="75%">
+                <img src="{{ asset('./assets/img/logo-lkp.png') }}" alt="" width="75%">
             </div>
             <div class="form-panel w-75 p-5 text-white d-flex justify-content-center align-items-center">
-                <form action="" method="POST">
-                    <label for="" style="transform: translateY(-30px);">
+                <form action="{{ route('login') }}" method="POST">
+                    @csrf
+                    <label for="">
                         <h1>Login Account</h1>
+                        <p style="transform: translateY(-10px);">Sistem Absensi Siswa</p>
                     </label>
                     <label for="email" class="w-100">Email
-                        <input type="email" id="email" name="email" value="" class="form-control w-100"
-                            placeholder="Masukkan Email..">
+                        <input type="email" id="email" name="email" value="{{ old('email') }}"
+                            class="form-control w-100" placeholder="Masukkan Email..">
                     </label>
+                    @error('email')
+                        <div class="text-danger my-1">{{ $message }}</div>
+                    @enderror
                     <label for="password" class="w-100 mt-1">Password
                         <input type="password" id="password" name="password" class="form-control w-100" value=""
                             placeholder="Masukkan Password..">
                     </label>
+                    @error('password')
+                        <div class="text-danger my-1">{{ $message }}</div>
+                    @enderror
                     <button type="submit" class="btn btn-primary mt-3 w-100">Login</button>
+                    <label for="">
+                        <p class="mt-2">version 1.0. Copyright &copy;2024</p>
+                    </label>
                 </form>
             </div>
         </div>
     </div>
+    @if (session()->has('error'))
+        <div class="alert alert-danger shadow position-absolute" style="top: 2%;right: 2%" onclick="hideElement(this)">
+            {{ session('error') }} <i class="ms-2 fa-solid fa-x c-pointer"></i>
+        </div>
+    @endif
+    <script>
+        function hideElement(element) {
+            element.style.display = "none";
+        }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/3.1.0/tsparticles.bundle.min.js"
         integrity="sha512-Pv/x9J11LpAF+KsoMoLjZZbVK03G63ZDN/GhJrhu8bP5sZO3VHzQ1XbfuU/+wubUB00sNnMAIEM3l/PMVUlKjQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
