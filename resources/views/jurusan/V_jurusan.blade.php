@@ -57,6 +57,10 @@
             <div class="alert alert-success shadow position-absolute top-0" style="right: 27%" onclick="hideElement(this)">
                 {{ session('success') }} <i class="ms-2 fa-solid fa-x c-pointer"></i>
             </div>
+        @elseif(session()->has('error'))
+            <div class="alert alert-danger shadow position-absolute top-0" style="right: 27%" onclick="hideElement(this)">
+                {{ session('error') }} <i class="ms-2 fa-solid fa-x c-pointer"></i>
+            </div>
         @endif
     </section>
     <!-- end section main content -->

@@ -60,7 +60,11 @@ Route::prefix('/admin')->group(function () {
         Route::delete('/hapus/{id}', [InstrukturController::class, 'destroy'])->name('hapus.instruktur');
     });
     Route::prefix('/siswa')->group(function () {
-        Route::get('/', [SiswaController::class, 'index']);
+        Route::get('/', [SiswaController::class, 'index'])->name('siswa');
         Route::get('/tambah', [SiswaController::class, 'create']);
+        Route::get('/edit/{id}', [SiswaController::class, 'edit'])->name('url.edit.siswa');
+        Route::post('/tambah', [SiswaController::class, 'store'])->name('tambah.siswa');
+        Route::put('/edit/{id}', [SiswaController::class, 'update'])->name('edit.siswa');
+        Route::delete('/hapus/{id}', [SiswaController::class, 'destroy'])->name('hapus.siswa');
     });
 });
